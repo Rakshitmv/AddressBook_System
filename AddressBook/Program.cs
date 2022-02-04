@@ -11,14 +11,32 @@ namespace AddressBook
         static void Main(string[] args)
         {
             Console.WriteLine("-------Welcome to Address Book Program--------\n");
-            Contacts contacts = new Contacts();
+            AddressBookMain addressbook = new AddressBookMain();
+            bool flag = true;
+            while (flag)
+            {
+                Console.WriteLine("\n 1.Add Contact." + "\n 2.Edit Contact." + "\n 3.Exit.\n");
+                int option = Convert.ToInt32(Console.ReadLine());
+                switch (option)
+                {
+                    case 1:
+                        addressbook.AddContact();
+                        break;
+                    case 2:
+                        Console.WriteLine("Enter First Name : ");
+                        string firstName = Convert.ToString(Console.ReadLine());
+                        addressbook.EditContact(firstName);
+                        break;
+                    case 3:
+                        flag = false;
+                        break;
+                    default:
+                        Console.WriteLine("please enter correct option");
+                        break;
+                }
+            }
 
-            AddressBookMain address = new AddressBookMain();
-            address.AddContact();
-            
-            Console.ReadLine();
-
-          
+            Console.ReadKey();
         }
     }
 }
