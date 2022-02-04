@@ -9,7 +9,7 @@ namespace AddressBook
     public class AddressBookMain
     {
         List<Contacts> addressBook = new List<Contacts>();
-        public void CreateContact()
+        public void AddContact()
         {
             Contacts contacts = new Contacts();
             Console.WriteLine("Enter First Name\n");
@@ -29,9 +29,12 @@ namespace AddressBook
             Console.WriteLine("Enter Email");
             contacts.Email = Console.ReadLine();
             Console.WriteLine("Created Contacts:\n " + contacts.FirstName + "\n" + contacts.LastName + "\n" + contacts.Address + "\n" + contacts.City + "\n" + contacts.State + "\n" + contacts.Zip + "\n" + contacts.PhoneNumber + "\n" + contacts.Email + "\n");
+
             addressBook.Add(contacts);
-
-
+            Console.WriteLine("{0}Contact has successfully added", contacts.FirstName);
         }
+      
     }
 }
+
+       
