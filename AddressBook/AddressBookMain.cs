@@ -97,6 +97,21 @@ namespace AddressBook
             }
         }
 
+        public void DeleteContact(string firsName)
+        {
+            Contacts contact = new Contacts();
+            foreach (var data in addressBook)
+            {
+                if (data.FirstName == firsName)
+                {
+                    contact = data;
+                    addressBook.Remove(contact);
+                    Console.WriteLine("{0} Contact Successfully Deleted", contact.FirstName);
+                    return;
+                }
+            }
+        }
+
 
         public void Display()
         {

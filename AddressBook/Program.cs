@@ -15,7 +15,7 @@ namespace AddressBook
             bool flag = true;
             while (flag)
             {
-                Console.WriteLine("\n 1.Add Contact." + "\n 2.Edit Contact." + "\n 3.Exit.\n");
+                Console.WriteLine("\n 1.Add Contact." + "\n 2.Edit Contact." + "\n 3.Delete Contact" + "\n 4.Exit.\n");
                 int option = Convert.ToInt32(Console.ReadLine());
                 switch (option)
                 {
@@ -28,6 +28,11 @@ namespace AddressBook
                         addressbook.EditContact(firstName);
                         break;
                     case 3:
+                        Console.WriteLine("Enter First Name To Delete Contact : ");
+                        string firstNameToDelete = Convert.ToString(Console.ReadLine());
+                        addressbook.DeleteContact(firstNameToDelete);
+                        break;
+                    case 4:
                         flag = false;
                         break;
                     default:
